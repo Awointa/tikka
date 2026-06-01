@@ -1,8 +1,18 @@
 /**
  * Contract Configuration
- * 
+ *
  * Configuration for Soroban raffle smart contract interactions
  */
+
+/** Player count above which a raffle is considered "Trending". */
+export const TRENDING_PLAYER_THRESHOLD = 50;
+
+/**
+ * How long a fetched player count is considered fresh (ms).
+ * Counts are re-fetched after this TTL on the next arcade page load.
+ * Default: 60 seconds — balances freshness vs RPC call volume.
+ */
+export const PLAYER_COUNT_CACHE_TTL_MS = 60_000;
 
 import { env } from "./env";
 import { STELLAR_CONFIG } from "./stellar";

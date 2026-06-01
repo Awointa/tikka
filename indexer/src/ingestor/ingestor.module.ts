@@ -13,11 +13,13 @@ import { DeadLetterEventEntity } from "../database/entities/dead-letter-event.en
 import { DlqService } from "./dlq.service";
 import { ReorgRollbackService } from "./reorg-rollback.service";
 
+import { RollbackAuditEntity } from "../database/entities/rollback-audit.entity";
+
 @Module({
   imports: [
     EventHandlersModule,
     ProcessorsModule,
-    TypeOrmModule.forFeature([IndexerCursorEntity, DeadLetterEventEntity]),
+    TypeOrmModule.forFeature([IndexerCursorEntity, DeadLetterEventEntity, RollbackAuditEntity]),
   ],
   providers: [
     CursorManagerService,
